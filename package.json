@@ -3,6 +3,9 @@
   "version": "0.1.1",
   "description": "Emulation of Firebase Server, adapted from https://github.com/urish/firebase-server",
   "main": "index.js",
+  "scripts": {
+    "parcel": "./node_modules/.bin/parcel ./demo/main.html"
+  },
   "bin": "./bin/firebase-server.js",
   "devDependencies": {
     "@babel/core": "^7.2.2",
