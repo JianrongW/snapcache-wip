@@ -39,7 +39,7 @@ pluginLoader.loadDir('/plugins', function(err,plugins){
 	
 // Timesync Init
 
-const TimesyncRedisHost = '<your redis host for timesync>';
+const TimesyncRedisHost = 'localhost';
 const TimesyncRedisPort = 6379;
 const TimesyncRedisDB = 10;
 var TimesyncClock = require('./component/timesync-clock.js');
@@ -47,7 +47,7 @@ TimesyncClock.init('redis://'+TimesyncRedisHost+':'+TimesyncRedisPort+'/'+Timesy
 
 // Redis DB Init
 
-const redisHostURL = '<your redis host>';
+const redisHostURL = 'localhost';
 const redisDB = 10;
 
 var database = require('./component/redis-db.js');
@@ -77,6 +77,10 @@ publicSnapcache.setRules({
         	"$family": {
         		".read": true
             }
+        },
+        "tasks": {
+        	".read": true,
+        	".write": true,
         }
     }
 });
